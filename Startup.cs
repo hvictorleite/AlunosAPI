@@ -60,9 +60,9 @@ namespace AlunosAPI
 
             services.AddCors(options =>
             {
-                options.AddPolicy(name: "AlunosReact", builder =>
+                options.AddPolicy(name: "AppsReact", builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
+                    builder.WithOrigins("http://localhost:3000", "http://localhost:3002")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
@@ -110,7 +110,7 @@ namespace AlunosAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlunosAPI v1"));
             }
 
-            app.UseCors("AlunosReact");
+            app.UseCors("AppsReact");
 
             app.UseHttpsRedirection();
 
