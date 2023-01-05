@@ -60,9 +60,9 @@ namespace AlunosAPI
 
             services.AddCors(options =>
             {
-                options.AddPolicy(name: "AlunosReact", builder =>
+                options.AddPolicy(name: "AppsReact", builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
+                    builder.WithOrigins("http://localhost:3000", "http://localhost:3002")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
